@@ -17,12 +17,20 @@ const OrderStatus = ({ currentStatus }) => {
       {statuses.map((status, index) => {
         const isActive = status.id === currentStatus;
         const isPast = statuses.findIndex(s => s.id === currentStatus) >= index;
-        
+
         return (
           <div key={status.id} className="flex flex-col items-center">
-            <div className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl mb-2
-              ${isActive ? 'bg-green-500 text-white ring-4 ring-green-200' :
-                isPast ? 'bg-green-100 text-green-600' : 'bg-gray-100 dark:bg-gray-700 text-gray-400'}`>
+            <div
+              className={
+                `w-16 h-16 rounded-full flex items-center justify-center text-2xl mb-2 ${
+                  isActive
+                    ? 'bg-green-500 text-white ring-4 ring-green-200'
+                    : isPast
+                      ? 'bg-green-100 text-green-600'
+                      : 'bg-gray-100 dark:bg-gray-700 text-gray-400'
+                }`
+              }
+            >
               {status.icon}
             </div>
             <span className={`text-sm font-medium ${isActive ? 'text-green-600' : 'text-gray-500'}`}>
@@ -50,7 +58,6 @@ export default function Invoice() {
 
   useEffect(() => {
     if (order?.kotNumber) {
-      // Check for status updates every 5 seconds
       const interval = setInterval(() => {
         const updatedOrder = getOrderByKOT(order.kotNumber);
         if (updatedOrder && updatedOrder.status !== order.status) {
@@ -117,16 +124,13 @@ export default function Invoice() {
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-6 sm:py-8">
       <div className="max-w-4xl mx-auto px-4">
         <div ref={invoiceRef} className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 sm:p-8">
-          {/* Header */}
           <div className="text-center mb-6 sm:mb-8">
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">Weerasiri Hotel and Bakery</h1>
             <p className="text-gray-600 mt-2">Order Invoice</p>
           </div>
 
-          {/* Order Status Tracker */}
           <OrderStatus currentStatus={order.status} />
 
-          {/* Order Details */}
           <div className="mt-6 sm:mt-8">
             <div className="flex flex-col sm:flex-row justify-between mb-4 sm:mb-6">
               <div>
@@ -141,7 +145,6 @@ export default function Invoice() {
               </div>
             </div>
 
-            {/* Items List */}
             <div className="border-t border-b py-4 sm:py-6">
               <div className="space-y-3">
                 {Object.entries(order.items).map(([key, item]) => {
@@ -166,7 +169,6 @@ export default function Invoice() {
               </div>
             </div>
 
-            {/* Total */}
             <div className="mt-4 sm:mt-6">
               <div className="flex justify-between items-center">
                 <p className="text-lg sm:text-xl font-semibold">Total</p>
@@ -177,7 +179,6 @@ export default function Invoice() {
             </div>
           </div>
 
-          {/* Action Buttons */}
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3">
             <button
               onClick={downloadInvoice}
@@ -196,4 +197,4 @@ export default function Invoice() {
       </div>
     </div>
   );
-} 
+}
