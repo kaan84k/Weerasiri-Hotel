@@ -85,13 +85,13 @@ const History = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold">Sales History</h1>
           <button
             onClick={() => window.history.back()}
-            className="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+            className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
           >
             Back to Dashboard
           </button>
@@ -121,15 +121,15 @@ const History = () => {
 
         {/* Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white p-6 rounded-lg shadow">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
             <h3 className="text-lg font-semibold mb-2">Total Sales</h3>
             <p className="text-2xl font-bold text-green-600">{formatCurrency(totalSales)}</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
             <h3 className="text-lg font-semibold mb-2">Total Orders</h3>
             <p className="text-2xl font-bold text-blue-600">{orders.length}</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
             <h3 className="text-lg font-semibold mb-2">Average Order Value</h3>
             <p className="text-2xl font-bold text-purple-600">
               {formatCurrency(orders.length ? totalSales / orders.length : 0)}
@@ -138,23 +138,23 @@ const History = () => {
         </div>
 
         {/* Sales Chart */}
-        <div className="bg-white p-6 rounded-lg shadow mb-8">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow mb-8">
           <Line data={chartData} options={chartOptions} />
         </div>
 
         {/* Item Sales Table */}
-        <div className="bg-white p-6 rounded-lg shadow">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
           <h2 className="text-xl font-bold mb-4">Item Sales</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full">
               <thead>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 dark:bg-gray-700">
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Revenue</th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
                 {Object.entries(itemSales).map(([item, data]) => (
                   <tr key={item}>
                     <td className="px-6 py-4 whitespace-nowrap">{item}</td>

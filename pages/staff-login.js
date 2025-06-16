@@ -19,8 +19,8 @@ export default function StaffLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-6 bg-white p-6 sm:p-8 rounded-2xl shadow-md">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-6 bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-md">
         <div>
           <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900">
             Staff Login
