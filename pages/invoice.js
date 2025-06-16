@@ -22,7 +22,7 @@ const OrderStatus = ({ currentStatus }) => {
           <div key={status.id} className="flex flex-col items-center">
             <div className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl mb-2
               ${isActive ? 'bg-green-500 text-white ring-4 ring-green-200' :
-                isPast ? 'bg-green-100 text-green-600' : 'bg-gray-100 dark:bg-gray-700 text-gray-400'}>
+                isPast ? 'bg-green-100 text-green-600' : 'bg-gray-100 dark:bg-gray-700 text-gray-400'}`>
               {status.icon}
             </div>
             <span className={`text-sm font-medium ${isActive ? 'text-green-600' : 'text-gray-500'}`}>
