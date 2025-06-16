@@ -142,8 +142,8 @@ export default function WeerasiriHotel() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <div className="bg-white shadow-md">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+      <div className="bg-white dark:bg-gray-800 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center py-4 sm:py-6">
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-0">Weerasiri Hotel and Bakery</h1>
@@ -166,7 +166,7 @@ export default function WeerasiriHotel() {
           <div className="w-full lg:w-2/3">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {menuItems.map((item) => (
-                <Card key={item.id} className="p-4 bg-white rounded-2xl shadow-md hover:shadow-lg transition">
+                <Card key={item.id} className="p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition">
                   <CardContent>
                     <div className="relative w-full h-40 sm:h-48 mb-4 rounded-lg overflow-hidden">
                       <Image
@@ -222,7 +222,7 @@ export default function WeerasiriHotel() {
 
           {/* Checkout Section */}
           <div className="w-full lg:w-1/3">
-            <div className="bg-white rounded-2xl shadow-md p-4 sm:p-6 sticky top-4">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-4 sm:p-6 sticky top-4">
               <h2 className="text-xl sm:text-2xl font-bold mb-4">Your Order</h2>
               {cartItems.length === 0 ? (
                 <p className="text-gray-500">No items in cart</p>
@@ -232,7 +232,7 @@ export default function WeerasiriHotel() {
                     {cartItems.map(([key, item]) => {
                       const [name, size] = key.split('-');
                       return (
-                        <div key={key} className="flex justify-between items-center bg-gray-50 p-3 rounded-lg">
+                        <div key={key} className="flex justify-between items-center bg-gray-50 dark:bg-gray-700 p-3 rounded-lg">
                           <div>
                             <p className="font-medium">{name}</p>
                             <p className="text-sm text-gray-500">{size} - {item.quantity}x</p>

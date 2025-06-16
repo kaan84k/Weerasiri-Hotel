@@ -21,8 +21,8 @@ const OrderStatus = ({ currentStatus }) => {
         return (
           <div key={status.id} className="flex flex-col items-center">
             <div className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl mb-2
-              ${isActive ? 'bg-green-500 text-white ring-4 ring-green-200' : 
-                isPast ? 'bg-green-100 text-green-600' : 'bg-gray-100 text-gray-400'}`}>
+              ${isActive ? 'bg-green-500 text-white ring-4 ring-green-200' :
+                isPast ? 'bg-green-100 text-green-600' : 'bg-gray-100 dark:bg-gray-700 text-gray-400'}>
               {status.icon}
             </div>
             <span className={`text-sm font-medium ${isActive ? 'text-green-600' : 'text-gray-500'}`}>
@@ -98,8 +98,8 @@ export default function Invoice() {
 
   if (!order) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-        <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md max-w-md w-full">
+      <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center p-4">
+        <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-lg shadow-md max-w-md w-full">
           <h1 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">No Order Found</h1>
           <p className="text-gray-600 mb-4">Please place an order first.</p>
           <button
@@ -114,9 +114,9 @@ export default function Invoice() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 sm:py-8">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-6 sm:py-8">
       <div className="max-w-4xl mx-auto px-4">
-        <div ref={invoiceRef} className="bg-white rounded-2xl shadow-md p-6 sm:p-8">
+        <div ref={invoiceRef} className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 sm:p-8">
           {/* Header */}
           <div className="text-center mb-6 sm:mb-8">
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">Weerasiri Hotel and Bakery</h1>
@@ -187,7 +187,7 @@ export default function Invoice() {
             </button>
             <button
               onClick={() => router.push('/')}
-              className="flex-1 bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors text-sm sm:text-base"
+              className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-sm sm:text-base"
             >
               Back to Menu
             </button>

@@ -36,7 +36,7 @@ export default function KitchenDashboard() {
       case 'received': return 'bg-yellow-100 text-yellow-800';
       case 'cooking': return 'bg-blue-100 text-blue-800';
       case 'finished': return 'bg-green-100 text-green-800';
-      default: return 'bg-gray-100 text-gray-800';
+      default: return 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100';
     }
   };
 
@@ -45,9 +45,9 @@ export default function KitchenDashboard() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       {/* Header */}
-      <div className="bg-white shadow">
+      <div className="bg-white dark:bg-gray-800 shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center py-4 sm:py-6">
             <div>
@@ -66,7 +66,7 @@ export default function KitchenDashboard() {
               </button>
               <button
                 onClick={() => router.push('/')}
-                className="w-full sm:w-auto bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                className="w-full sm:w-auto bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
               >
                 Logout
               </button>
@@ -86,7 +86,7 @@ export default function KitchenDashboard() {
               className={`px-3 sm:px-4 py-2 rounded-lg capitalize text-sm sm:text-base ${
                 activeTab === tab
                   ? 'bg-blue-500 text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-600'
               }`}
             >
               {tab}
@@ -97,7 +97,7 @@ export default function KitchenDashboard() {
         {/* Orders Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {filteredOrders.map((order) => (
-            <div key={order.kotNumber} className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+            <div key={order.kotNumber} className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 sm:p-6">
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <h3 className="text-base sm:text-lg font-semibold">{order.kotNumber}</h3>
