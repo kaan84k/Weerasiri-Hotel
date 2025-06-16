@@ -107,7 +107,7 @@ export default function Invoice() {
     return (
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center p-4">
         <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-lg shadow-md max-w-md w-full">
-          <h1 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">No Order Found</h1>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white mb-4">No Order Found</h1>
           <p className="text-gray-600 mb-4">Please place an order first.</p>
           <button
             onClick={() => router.push('/')}
@@ -125,7 +125,7 @@ export default function Invoice() {
       <div className="max-w-4xl mx-auto px-4">
         <div ref={invoiceRef} className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 sm:p-8">
           <div className="text-center mb-6 sm:mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">Weerasiri Hotel and Bakery</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white">Weerasiri Hotel and Bakery</h1>
             <p className="text-gray-600 mt-2">Order Invoice</p>
           </div>
 
