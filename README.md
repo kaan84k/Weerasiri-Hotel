@@ -34,6 +34,7 @@ A modern web-based restaurant management system built with Next.js, featuring re
 - **Styling**: Tailwind CSS 3.4.1
 - **State Management**: React Hooks
 - **Data Storage**: LocalStorage
+- **Authentication**: Supabase
 - **UI Components**: 
   - Custom components with Tailwind
   - Radix UI primitives
@@ -75,6 +76,21 @@ A modern web-based restaurant management system built with Next.js, featuring re
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### Supabase Setup
+
+1. Create a project at [Supabase](https://supabase.com/) and obtain your API
+   URL and `anon` key.
+2. Copy `.env.example` to `.env.local` and fill in the values for
+   `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
+3. Install the Supabase client:
+   ```bash
+   npm install @supabase/supabase-js
+   ```
+4. When deploying with GitHub Actions, add `NEXT_PUBLIC_SUPABASE_URL` and
+   `NEXT_PUBLIC_SUPABASE_ANON_KEY` as repository secrets.
+5. (Optional) Set up the staff profile table by running the SQL file in
+   `supabase/schema.sql` using the Supabase SQL editor.
+
 ## Project Structure
 
 ```
@@ -100,6 +116,12 @@ weerasiri-hotel/
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
 - `npm run download-images` - Download menu item images
+
+## GitHub Actions
+
+A CI workflow in `.github/workflows/ci.yml` installs dependencies, lints the
+code and builds the project. It requires `NEXT_PUBLIC_SUPABASE_URL` and
+`NEXT_PUBLIC_SUPABASE_ANON_KEY` to be defined as GitHub secrets.
 
 ## Key Features Implementation
 
