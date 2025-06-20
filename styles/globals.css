@@ -5,3 +5,8 @@
 html {
   @apply bg-white text-gray-800 dark:bg-gray-900 dark:text-white;
 }
+
+/* Ensure all text appears white in dark mode */
+* {
+  @apply dark:text-white;
+}
