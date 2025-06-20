@@ -15,6 +15,10 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
+      - name: Configure npm
+        run: |
+          npm config delete proxy || true
+          npm config delete https-proxy || true
       - run: npm ci
       - run: npm run lint
       - run: npm run build
